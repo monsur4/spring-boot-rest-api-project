@@ -1,0 +1,13 @@
+package com.mon.tutorial;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class SpringBootRestApiTutorialApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
