@@ -1,0 +1,27 @@
+version: '3'
+services:
+  springboot:
+    container_name: springboot-app
+    build: ./
+    image: springboot-image
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-server:3306/mydb?allowPublicKeyRetrieval=true&useSSL=false
+      # SPRING_DATASOURCE_USERNAME: dbuser
+      # SPRING_DATASOURCE_PASSWORD: dbpassword
+
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql-server
+  mysql-server:
+    container_name: mysql-focus
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      # MYSQL_DATABASE: mydb
+      # MYSQL_USER: dbuser
+      # MYSQL_PASSWORD: dbpassword
+    ports:
+      - 3306:3306
+          
+      
